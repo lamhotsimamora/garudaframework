@@ -15,7 +15,7 @@
 
 // require file "prepare.php" 
 // -----------------------------------------------------------------------------------------------------------------------    	              
-(require_once "GF_prepare.php") ? ! isset($prepare) ? $prepare = new GF_Prepare("______LOAD______") : false  : false;
+(require_once "GF_Prepare.php") ? ! isset($prepare) ? $prepare = new GF_Prepare("______LOAD______") : false  : false;
 // -----------------------------------------------------------------------------------------------------------------------	
 
 
