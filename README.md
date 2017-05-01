@@ -7,8 +7,7 @@
 1. Enable/Disable Maintenance Web
 2. Enable/Disable Database 
 3. Select PDO or MySqli for Connect to Database
-4. Enable/Disable Log File
-5. Select One Language or Multi Language 
+4. Select One Language or Multi Language 
 6. Hidden/Show Error or Notice Reporting PHP
 
 * Include important function 
@@ -20,6 +19,8 @@
 - New Class GF_Prepare 
 - New Class GF_String 
 - New Class GF_Function 
+- Change Structure Class
+- Delete Function Writting Log
 - Fix MySqli OOP (Select, Insert, Delete )
 - & More... 
 
