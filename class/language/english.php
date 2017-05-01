@@ -62,6 +62,7 @@ $languange->def('__ZONETIME__','Time Zone :');
 
 $languange->def('__INFO1__','For this page look at the location of file on this below : ');
 $languange->def('__INFO2__','For the controller of garudaframework page look at the location of file on this below : ');
+$languange->def('__INFO2a__','For the page that preparing anything what needed like class, method, constanta, session, cooike, file name, & more  is "GF_Prepare.php" look at the location of file on this below : ');
 $languange->def('__INFO3__','For the direct page of view look at the location of file on this below : ');
 
 $languange->def('__mySQLiC__','Example using mySQLi class');
