@@ -49,18 +49,13 @@ include __VIEW_PATH__."header.php";
 1. Enable/Disable Maintenance Web</br>
 2. Enable/Disable Database </br>
 3. Select PDO or MySqli for Connect to Database</br>
-4. Enable/Disable Log File</br>
-5. Select One Language or Multi Language </br>
-6. Hidden/Show Error or Notice Reporting PHP</br></br>
+4. Select One Language or Multi Language </br>
+5. Hidden/Show Error or Notice Reporting PHP</br></br>
 
-* Include important function</br> 
 * Example view with Bootstrap & Ajax (No Reload Page)</br>
-* Example CRUD with Javascript </br> 
-* Example Upload File</h4>
+* Example CRUD (Create, Read, Upload & Delete ) with Javascript / Ajax </br> 
+* Example Simple Upload File</h4>
 </textStr>
-
-
-
 
 <textStr><h4>
 @Change Log</br></br>
@@ -69,8 +64,10 @@ include __VIEW_PATH__."header.php";
 - New Class GF_Prepare </br>
 - New Class GF_String </br>
 - New Class GF_Function </br>
-- Fix MySqli OOP (Select, Insert, Delete ) </br>
-- & More... </br></br>
+- Change Structure Class</br>
+- Delete Function Writting Log</br>
+- Fix MySqli OOP (Constructor, Select Function, Update Function, Insert Function,& Delete Function ) </br>
+- & More...  </br></br>
 
 
 # Update v.1.3.2 </br>
