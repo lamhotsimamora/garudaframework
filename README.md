@@ -1,6 +1,6 @@
 @Visit example https://garudaframework.teloletchat.com/
 
-@DEMO ON YOUTUBE https://youtu.be/jjlWBlAeLok
+@DEMO ON YOUTUBE COMING SOON
 
 
 # garudaFrameWork v.1.4 ( FRAMEWORK PHP ) (1 April 2017)
@@ -21,7 +21,7 @@
 - New Class GF_Function 
 - Change Structure Class
 - Delete Function Writting Log
-- Fix MySqli OOP (Select, Insert, Delete )
+- Fix MySqli OOP (Constructor, Select Function, Update Function, Insert Function,& Delete Function )
 - & More... 
 
 # Update v.1.3.1
