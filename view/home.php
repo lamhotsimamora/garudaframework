@@ -49,17 +49,26 @@ include __VIEW_PATH__."header.php";
 		<p></p>
 		<textStr><h4><b>garudaFramework/view/home.php </b></h4></textStr>
 
-		<p><strong><h4><?= (__INFO2__ ) ; ?></strong></h4></p>
-
-		<textStr><h4><font color="red">garudaFramework/class/index.php </font> </h4>
+		<p><strong><h4><?= (__INFO2a__ ) ; ?></strong></h4></p>
 
 		<textStr>
+		<textStr>
             <h4>
-    		<b>GF_Controller & GF_Class</b>
+    		<b>garudaFramework/GF_Prepare.php </b>
     		</h4>
 		</textStr>
 
 		</textStr>
+    <p><strong><h4><?= (__INFO2__ ) ; ?></strong></h4></p>
+    <textStr><h4><font color="red">garudaFramework/class/GF_Controller.php </font> </h4>
+
+    <textStr>
+            <h4>
+        <b>GF_Controller</b>
+        </h4>
+    </textStr>
+
+    </textStr>
 		<p><strong><h4><?= ( __INFO3__ ); ?></h4></strong></p>
 		<textStr><h4><b><font color="green">garudaFramework/view/index.php</font></b> </h4>
         </textStr>	
