@@ -51,7 +51,7 @@ include __VIEW_PATH__."header.php";
   <center> 
   </br>
 
-    <form action="<?= "http://localhost/garudaframework/result/file" ?>" method="post" enctype="multipart/form-data">
+  <form action="<?= $dir_app."result/file" ?>" method="post" enctype="multipart/form-data">
 
     <input type="file" id="file_upload" name="file_upload" placeholder="upload file" class=""> 
 
