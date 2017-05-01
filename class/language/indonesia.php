@@ -62,6 +62,8 @@ $languange->def('__ZONETIME__','Zona Waktu :');
 
 $languange->def('__INFO1__','Untuk halaman ini lihat lokasi file di bawah ini :');
 $languange->def('__INFO2__','Untuk halaman controller garudaframework lihat lokasi file di bawah ini : ');
+$languange->def('__INFO2a__',
+    'Untuk halaman yang mempersiapkan segala kebutuhan seperti class, method, constanta, session, cookie, nama file, & lainnya adalah "GF_Prepare.php" lihat lokasi file di bawah ini :');
 $languange->def('__INFO3__','Untuk halaman pengalihan tampilan lihat lokasi file di bawah ini : ');
 
 $languange->def('__mySQLiC__','Contoh menggunakan class mySQLi ');
