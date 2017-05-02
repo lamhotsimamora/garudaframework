@@ -13,11 +13,12 @@
 
 
 
-// require file "GF_Prepare.php" 
-// -----------------------------------------------------------------------------------------------------------------------    	              
-(require_once "GF_Prepare.php") ? ! isset($prepare) ? $prepare = new GF_Prepare("______LOAD______") : false  : false;
-// -----------------------------------------------------------------------------------------------------------------------	
+//     require file "GF_Prepare.php" 
+$app = require_once "GF_Prepare.php";
 
-
-
+if (file_exists($app))
+ 
+    return $app;
+    
+    ! isset($prepare) ? $prepare = new GF_Prepare("______LOAD______") : false ;
 
