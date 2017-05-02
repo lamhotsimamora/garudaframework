@@ -46,10 +46,18 @@ if (isset($_GET['name']) && isset($_GET['email']) && isset($_GET['phone']) && is
     
     ! isset($db_obj) ? $db_obj = new db() : ""; 
 
-    // update data by id
-    $update_data = $db_obj->
-    UpDelData("update t_example set username='$name',email='$email',phone='$phone',address='$address' where id='$id'"); 
-
+    // update data , 
+    // t_example -> tabel name
+    // id -> where primary_key = value
+    // username -> column1
+    // $name -> value1
+    // email ->column2
+    // $email ->value2
+    // phone ->column3
+    // $phone ->value3
+    // address->column4
+    // $address->value4
+    $update_data = $db_obj->update("t_example","id",$id,"username",$name,"email",$email,"phone",$phone,"address",$address);
     if ($update_data)
     { 
         // check result
