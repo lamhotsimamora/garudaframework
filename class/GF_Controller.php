@@ -58,17 +58,8 @@ class GF_Controller extends GF_Prepare
             // create define __LOAD__ 
                $this->def('__LOAD__','TRUE');
 
-
-            // ===========================================================================================================
-            // check variabel first_load
-            // if first_load is TRUE then 
-            if ($this->getFirstLoad()==TRUE) {  } // do nothing
-            
-            // if first_load is FALSE then 
-            else if ($this->getFirstLoad()==FALSE)
-            {
-
-                // check value of multi language
+          
+                // always check value of multi language
                 // if TRUE then call file "class/language.php"
                 // else FALSE then SKIP
                 if (___MULTI_LANGUANGE__){  
@@ -81,6 +72,17 @@ class GF_Controller extends GF_Prepare
                         exit();
                     } 
                 }
+                      
+                      
+                      
+            // ===========================================================================================================
+            // check variabel first_load
+            // if first_load is TRUE then 
+            if ($this->getFirstLoad()==TRUE) {  } // do nothing
+            
+            // if first_load is FALSE then 
+            else if ($this->getFirstLoad()==FALSE)
+            {
 
                 // Load view direct file "view/index.php" , if FALSE then
                 if (! $this->LoadView($this->view_direct_file)) 
