@@ -28,8 +28,12 @@ if (file_exists($app))
     
     ! isset($prepare) ? $prepare = new GF_Prepare("______LOAD______") : false ;
 
+    // ====================================================
+    // remove this code if you dont see rendering page
+    // ====================================================
+        $time_end = microtime_float();
+        $time = $time_end - $time_start;
 
-    $time_end = microtime_float();
-    $time = $time_end - $time_start;
+        echo '<div id="body"> <code> <h4> Rendering Page : '.$time.' seconds </h4> </code></div>';
 
-echo '<div id="body"> <code> <h4> Rendering Page : '.$time.' seconds </h4> </code></div>';
+     // ====================================================
