@@ -26,7 +26,7 @@ class GF_Prepare
 
       public 		   $cookie_lang            = "language-Garuda-Framework" ; // set name of cookie language-Garuda-Framework
 
-      public  	   $default_lang            = "IND";
+      public  	   $default_lang           = "IND";
 
 
       protected    $first_load             = FALSE;             // Don't change this value, Let it to be FALSE
@@ -50,7 +50,7 @@ class GF_Prepare
       private      $_notice_error          = false;
       public       $maintenance_start      = false;             // if Maitenance TRUE then direct to "View/Maintenance.php" 
       public       $multi_language_start   = TRUE;
-      public      $database_type          = __MYSQLI__;        // change to "__PDO__" if you want to use PDO, "__MYSQLI__" if you want to use MYSQLI
+      public       $database_type          = __MYSQLI__;        // change to "__PDO__" if you want to use PDO, "__MYSQLI__" if you want to use MYSQLI
 
       public       $token_app              = "1232asdasd2";
       protected    $class_name_mysqli      = "db";
@@ -78,8 +78,10 @@ class GF_Prepare
           // set directory web server constant
           ! defined('__SERVER__') ? define('__SERVER__', dirname( __FILE__ )."/",true) : false ;
 
+          // if protocol equal false
            if ($this->protocol == false)
           {
+            // call method check protocol
              $this->checkProtocol();
           }
 
@@ -120,13 +122,14 @@ class GF_Prepare
           //$this->_sess("__PROTOCOL__",__PROTOCOL__);
 
        
-
+          // if function error already set then skip, 
+          // if not then require error file 
           if (! function_exists($this->function_error))
           {
               $this->setReqClass($this->error_file);
           }
 
-        
+          // always call method checkMaintenance
           $this->checkMaintenance();
 
 
@@ -144,22 +147,27 @@ class GF_Prepare
 
           // check database
           if ($this->database_start){
-              
+              // call method check database type
               $this->checkDatabaseType();
           }
       	
       
 
+          // if argument is set ,
 
           if (isset($var))
           {
+              // if value of argument equal to  ______LOAD______
               if ($var=="______LOAD______")
               {
+                // call method load gf controller
               	$this->_Load_GF_Controller();
 
               }
           }
-
+          // and the last
+          // call method gf function
+          // and gf-string
           $this->load_GF_Function();
           $this->load_GF_String();
 
@@ -174,14 +182,14 @@ class GF_Prepare
           
       }
 
-       // metohod Set Define
+       // metohod set constant for define anything value
       public function def($var,$val) 
       {   
           // return constant 
           return (defined($var) ? false : define("$var","$val", true));
       }    
 
-      // method set constant 
+      // method set constant for define path location of app
   	public function _def($var,$val)
   	{
   		return (defined($var) ? false : define("$var",__SERVER__."$val/", true));
@@ -190,11 +198,8 @@ class GF_Prepare
   	  // method include maintenance page
       public function MaintenancePage()
       {
-         
+            
            $this->setReqView($this->maintenance_file);
-
-          
-
       }
 
       public   function checkProtocol(){
@@ -229,9 +234,11 @@ class GF_Prepare
     
 
 
-   
+      // method load gf controller
     	private function _Load_GF_Controller(){
-    	
+    	 // check file first, 
+        // then require file gf controoler
+        // and set new object with parameter "?"
     		$this->setReqClass($this->_GF_Controller_Name);
     		! isset($GF_Controller) ? $GF_Controller = new GF_Controller("?") : false ;
     	}
