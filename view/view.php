@@ -68,7 +68,7 @@ if (class_exists('myPDO'))
   }
 else
 {
-	echo('<h4><font color="red">PDO</font> is DISABLE or <font color="red">Database_Start</font> is FALSE , See <font color="green">"database_start"</font> on <font color="red"> "class/index.php"</font> -> (line 66) or (line 71) </br></h4>');
+       echo('<h4><font color="red">PDO</font> is DISABLE or <font color="red">Database_Start</font> is FALSE , See <font color="green">"database_start"</font> on <font color="red"> "garudaFramework/GF_Prepare.php"</font> -> (line 49) </br></h4>');
 }
 ?>
 </textStr>
