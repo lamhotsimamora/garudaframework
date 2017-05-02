@@ -506,13 +506,13 @@ class db{
         }
 
     }
-
-    public function update($tblname,$column1,$value1,
-                                    $column2,$value2,
-                                    $column3,$value3,
-                                    $column4,$value4,
-
-                                    $parameter1,$value_parameter1){
+          
+     public function update($tblname,$parameter1,$value_parameter1,
+                                    $column1,$value1,
+                                    $column2=false,$value2=false,
+                                    $column3=false,$value3=false,
+                                    $column4=false,$value4=false,
+                                    $column5=false,$value5=false){
 
          if (empty($tblname) || empty($column1) || empty($value1) || empty($parameter1) || empty($value_parameter1))
         {
@@ -528,28 +528,40 @@ class db{
 
         if ($column2 == false && $value2==false 
             && $column3 == false && $value3== false 
-            && $column4 == false && $value4 ==false) {
+            && $column4 == false && $value4 ==false 
+             && $column5 == false && $value5 ==false) {
                     
             $query_master = $query_update." where $parameter1='$value_parameter1'";
         }
        else if ($column2 != false && $value2 !=  false 
                 && $column3 == false && $value3 == false 
-                && $column4 == false && $value4 == false) {
+                && $column4 == false && $value4 == false
+                 && $column5 == false && $value5 ==false) {
 
              $query_master = $query_update.",$column2='$value2' where $parameter1='$value_parameter1'";
         }
         else if ($column2 != false && $value2 !=  false 
                 && $column3 != false && $value3 != false 
-                && $column4 == false && $value4 == false) {
+                && $column4 == false && $value4 == false
+                 && $column5 == false && $value5 == false ) {
 
              $query_master = $query_update.",$column2='$value2', $column3='$value3' where $parameter1='$value_parameter1'";
         }
         else if ($column2 != false && $value2 !=  false 
-            && $column3 != false && $value3 != false 
-            && $column4 != false && $value4 != false) {
+                && $column3 != false && $value3 != false 
+                && $column4 != false && $value4 != false
+                && $column5 == false && $value5 == false) {
 
            $query_master = 
            $query_update.",$column2='$value2', $column3='$value3',$column4='$value4' where $parameter1='$value_parameter1'";
+        }
+         else if ($column2 != false && $value2 !=  false 
+                && $column3 != false && $value3 != false 
+                && $column4 != false && $value4 != false
+                && $column5 != false && $value5 != false) {
+
+           $query_master = 
+           $query_update.",$column2='$value2', $column3='$value3',$column4='$value4',$column5='$value5' where $parameter1='$value_parameter1'";
         }
 
          if ($this->conn != false )
@@ -570,5 +582,6 @@ class db{
         }
 
 
-    }
+    }      
+
 }
