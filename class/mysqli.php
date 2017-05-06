@@ -116,11 +116,7 @@ class db{
        }
     }
 
-    private function querySelect($primary_key,$tblname,$column,$value){
-        return "select $primary_key from $tblname where $column='$value'";
-    }
-
-
+ 
     // check column name 
     // and get id 
     public function checkGetId($column,$tblname,
@@ -140,18 +136,36 @@ class db{
              && $column3 ==false && $value3 == false)
         {
 
-            $query_master = $this->
-        querySelect("$column","$tblname","$column1","$value1")." limit 1";
+           
+            if (is_int($value1))
+            {
+                    $query_master = $this->
+                    querySelect("$column","$tblname","$column1",$value1)." limit 1";
 
+            }
+            else
+            {
+                    $query_master = $this->
+                    querySelect("$column","$tblname","$column1","$value1")." limit 1";
+
+            }
            
         }
        else if ($column1 != false && $value1 != false 
                  && $column2!= false && $value2 != false
                  && $column3 ==false && $value3 == false ){
             
-            $query_master = $this->
-        querySelect("$column","$tblname","$column1","$value1")." and $column2='$value2' limit 1";
-
+           
+          if (is_int($value1) && is_int($value2))
+            {
+                    $query_master = $this->
+                querySelect("$column","$tblname","$column1",$value1)." and $column2=$value2 limit 1";
+            }
+            else
+            {
+                    $query_master = $this->
+                querySelect("$column","$tblname","$column1","$value1")." and $column2='$value2' limit 1";
+            }
            
         }
         else if ($column1 != false && $value1 != false 
@@ -193,11 +207,25 @@ class db{
 
     }
 
+     private function querySelect($primary_key,$tblname,$column,$value){
+        if (is_int($value))
+        {
+
+             return "select $primary_key from $tblname where $column=$value";
+        }
+        else
+        {
+              return "select $primary_key from $tblname where $column='$value'";
+        }
+       
+    }
+
     // Check Id Of Data
     public function checkId($column, $tblname,
-                            $column1,$value1,
+                            $column1 , $value1,
                             $column2 = false, $value2 = false,
-                            $column3 = false, $value3 = false)
+                            $column3 = false, $value3 = false,
+                            $column4 = false, $value4 = false)
     {
         $query_master= "";
 
@@ -208,25 +236,57 @@ class db{
 
         if ($column1 != false && $value1 != false 
             && $column2==false && $value2 == false
-            && $column3 == false && $value3  == false ){
+            && $column3 == false && $value3  == false
+            && $column4 == false && $value4  == false ){
 
-            $query_master = $this->querySelect("$column","$tblname","$column1","$value1")." limit 1";
+           
+            if (is_int($value1))
+            {
+               $query_master = $this->querySelect("$column","$tblname","$column1",$value1)." limit 1";
+
+            }
+            else
+            {
+                $query_master = $this->querySelect("$column","$tblname","$column1","$value1")." limit 1";
+
+            }
            
         }
         else if ($column1 != false && $value1 != false 
                 && $column2 != false && $value2 != false
-                && $column3 == false && $value3  == false ){
+                && $column3 == false && $value3  == false
+                  && $column4 == false && $value4  == false ){
         
-            $query_master = $this->querySelect("$column","$tblname","$column1","$value1")." and $column2='$value2' limit 1";
+            
+            if (is_int($value1) && is_int($value2))
+            {
+                 $query_master = $this->querySelect("$column","$tblname","$column1",$value1)." and $column2=$value2 limit 1";
+            }
+            else
+            {
+               $query_master = $this->querySelect("$column","$tblname","$column1","$value1")." and $column2='$value2' limit 1";
 
+            }
             
         }   
         else if ($column1 != false && $value1 != false 
                 && $column2 != false && $value2 != false
-                && $column3 != false && $value3  != false ){
+                && $column3 != false && $value3  != false
+                  && $column4 == false && $value4  == false ){
         
             $query_master = $this->
         querySelect("$column","$tblname","$column1","$value1")." and $column2='$value2' and $column3='$value3' limit 1";
+
+            $count = $this->selectCount($query_master);
+
+        }
+         else if ($column1 != false && $value1 != false 
+                && $column2 != false && $value2 != false
+                && $column3 != false && $value3  != false
+                  && $column4 !=  false && $value4  != false ){
+        
+            $query_master = $this->
+        querySelect("$column","$tblname","$column1","$value1")." and $column2='$value2' and $column3='$value3' and $column4='$value4' limit 1";
 
             $count = $this->selectCount($query_master);
 
