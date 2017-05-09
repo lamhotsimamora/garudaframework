@@ -1,4 +1,6 @@
 @Visit example https://garudaframework.teloletchat.com/
+@Visit example https://garudaframework.lamhotsimamora.com
+
 
 @DEMO ON YOUTUBE COMING SOON
 
