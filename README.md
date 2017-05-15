@@ -1,6 +1,7 @@
 
 @Visit example https://garudaframework.lamhotsimamora.com
 
+@This is my application that use Garuda Framework ! Check it out https://kelasku.lamhotsimamora.com/
 
 @DEMO ON YOUTUBE COMING SOON
 
