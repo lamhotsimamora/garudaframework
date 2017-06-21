@@ -1,22 +1,5 @@
 <?php
-/* ############################################################################
-          ================== garudaFramework v.1.4 ================== 
-   ############################################################################
-                Update Released 29 April 2017 / Jambi, Indonesia
-                        Written by Lamhot Simamora 
-                        lamhotsimamora36@gmail.com  
-                https://github.com/lamhotsimamora/garudaFramework
-                        OPEN SOURCE & FREE LICENSE    
-                  YOU CAN USE THIS FRAMEWORK FOR EVERYTHING 
-  ############################################################################
 
-*   GF Class Has Some Method 
-*   -> LoadView
-*/
-
-// ===================================================================
-//  check if Session Public Access is already set or not      
-// ===================================================================
 ! isset($_SESSION["public_access"]) ? exit("403 You dont have permission to access / on this server.") : "";
 
 
