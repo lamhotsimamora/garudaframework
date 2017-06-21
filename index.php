@@ -20,4 +20,4 @@ if (file_exists($app))
     return $app;
     
     ! isset($prepare) ? $prepare = new GF_Prepare("______LOAD______") : false ;
-=
+
