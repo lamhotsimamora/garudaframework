@@ -11,15 +11,8 @@
   ############################################################################
 */
 
-function microtime_float()
-{
-    list($usec, $sec) = explode(" ", microtime());
-    return ((float)$usec + (float)$sec);
-}
 
-$time_start = microtime_float();
 
-//     require file "GF_Prepare.php" 
 $app = require_once "GF_Prepare.php";
 
 if (file_exists($app))
@@ -27,13 +20,4 @@ if (file_exists($app))
     return $app;
     
     ! isset($prepare) ? $prepare = new GF_Prepare("______LOAD______") : false ;
-
-    // ====================================================
-    // remove this code if you dont want see rendering page
-    // ====================================================
-        $time_end = microtime_float();
-        $time = $time_end - $time_start;
-
-        echo '<div id="body"> <code> <h4> Rendering Page : '.$time.' seconds </h4> </code></div>';
-
-     // ====================================================
+=
